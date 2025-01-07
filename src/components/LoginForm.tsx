@@ -8,16 +8,17 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const { isLoading, errorMessage } = useSelector((state: RootState) => state.app);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(loginRequest());
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  dispatch(loginRequest());
 
-    if (username === 'admin' && password === 'password123') {
-      dispatch(loginSuccess(username));
-    } else {
-      dispatch(loginFailure('Invalid credentials'));
-    }
-  };
+  if (username === 'admin' && password === 'password123') {
+    dispatch(loginSuccess(username));
+  } else {
+    dispatch(loginFailure('Invalid credentials'));
+  }
+};
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
