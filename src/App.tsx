@@ -6,16 +6,15 @@ import Welcome from './components/Welcome';
 interface RootState {
   isLoggedIn: boolean;
 }
+interface AppState {
+  isLoggedIn: boolean;
+}
 
 const App: React.FC = () => {
-  // Accessing Redux state
-  const isLoggedIn = useSelector((state: RootState) => state.isLoggedIn);
-
-  return (
-    <div>
-      {isLoggedIn ? <Welcome /> : <LoginForm />}
-    </div>
-  );
+  const state: AppState = useSelector((state: { app: AppState }) => state.app);
+  return <div>{state.isLoggedIn ? 'Welcome' : 'Login'}</div>;
 };
+
+ 
 
 export default App;
