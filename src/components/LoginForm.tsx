@@ -6,7 +6,7 @@ const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
-  const { isLoading, errorMessage } = useSelector((state) => state);
+  const { isLoading, errorMessage } = useSelector((state: RootState) => state.app);
 
   const handleSubmit = (e) => {
     e.preventDefault();
