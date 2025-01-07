@@ -9,8 +9,8 @@ const App: React.FC = () => {
   const isLoggedIn = useSelector((state: RootState) => state.app.isLoggedIn);
 
   return (
-    <div>
-      {isLoggedIn ? <Welcome /> : <LoginForm />}
+     <div>
+      {isLoggedIn ? <Welcome username={username} /> : <LoginForm />}
     </div>
   );
 };
