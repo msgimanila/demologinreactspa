@@ -1,4 +1,4 @@
- 
+import { WelcomeProps } from '../types'; 
 
 interface WelcomeProps {
   username: string;
