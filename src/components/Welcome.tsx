@@ -1,5 +1,8 @@
 import { useSelector } from 'react-redux';
 
+interface WelcomeProps {
+  username: string;
+}
 const Welcome = () => {
   const { username } = useSelector((state) => state);
 
