@@ -3,10 +3,13 @@ import { useSelector } from 'react-redux';
 import LoginForm from './components/LoginForm';
 import Welcome from './components/Welcome';
 
-const App = () => {
-  const { isLoggedIn } = useSelector((state) => state);
-
-  return isLoggedIn ? <Welcome /> : <LoginForm />;
+interface AppState {
+  isLoggedIn: boolean;
+}
+const App: React.FC = () => {
+  const state: AppState = { isLoggedIn: false };
+  return <div>{state.isLoggedIn ? 'Welcome' : 'Login'}</div>;
 };
+
 
 export default App;
