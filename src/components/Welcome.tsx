@@ -3,9 +3,8 @@ import { useSelector } from 'react-redux';
 interface WelcomeProps {
   username: string;
 }
-const Welcome = () => {
-  const { username } = useSelector((state) => state);
 
+const Welcome = ({ username }: WelcomeProps) => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <h1 className="text-2xl font-bold">Welcome, {username}!</h1>
